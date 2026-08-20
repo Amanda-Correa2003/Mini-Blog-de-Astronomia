@@ -56,10 +56,10 @@ db.run(`DELETE FROM posts`);
     db.run(`DELETE FROM sqlite_sequence WHERE name='comments'`);
 
     db.run(`INSERT INTO comments (postId, email, body) VALUES 
-      (1, 'yunasilva@email.com', 'UAUUUU'),
-      (1, 'devalaya.p@email.com', 'Tudo mentira'),
-      (2, 'carlinhosuzumaki@email.com', 'Sempre tive essa curiosidade sobre como eles dormem flutuando kkkk'),
-      (3, 'helena.troia@email.com', 'MT BOM!')`);
+      (7, 'yunasilva@email.com', 'UAUUUU'),
+      (7, 'devalaya.p@email.com', 'Tudo mentira'),
+      (8, 'carlinhosuzumaki@email.com', 'Sempre tive essa curiosidade sobre como eles dormem flutuando kkkk'),
+      (9, 'helena.troia@email.com', 'MT BOM!')`);
     
     console.log('Dados semeados com sucesso.');
   });
