@@ -1,38 +1,46 @@
-# 🌌 AstroBlog Full-Stack
+🌌 Mini Blog Fullstack (AstroBlog)
 
- Sobre o Projeto
-
-O AstroBlog é uma evolução de um projeto front-end
-básico, transformado em uma aplicação Full-Stack.
-O objetivo é exibir artigos e curiosidades sobre o universo 
-(buracos negros, missões espaciais, exoplanetas, etc.) consumindo 
-dados de um banco de dados real através de uma API própria.
-
+Aplicação fullstack desenvolvida para gerenciamento de postagens de blog, criada com foco em simplicidade, clareza e integração entre backend e banco de dados.
 
 Tecnologias Utilizadas
 
-* Back-end: Node.js, Express
-* Banco de Dados: SQLite (com persistência local)
-* Front-end: HTML5, JavaScript moderno (Fetch API)
-* Estilização & Ícones: Tailwind CSS, FontAwesome
+* Node.js com Express: Construção da API e rotas do servidor.
+* SQLite3: Banco de dados relacional leve e integrado para persistência das postagens.
+* CORS: Configuração de segurança para permitir requisições de outras origens.
+
+Como Executar o Projeto
+
+1. Clone este repositório em sua máquina:
+   ```bash
+   git clone <url-do-seu-repositorio>
+   cd mini-blog-fullstack
+
+```
+
+2. Instale as dependências:
+```bash
+npm install
+
+```
 
 
-Estrutura do Projeto
+3. Inicie o servidor:
+```bash
+npm start
 
-
-mini-blog/
-├── public/
-│   └── index.html      # Interface visual (Front-end com Tailwind)
-├── database.sqlite     # Banco de dados local gerado automaticamente
-├── package.json        # Dependências e scripts do Node.js
-└── server.js           # Servidor Express e rotas da API
-
-Imagens
-
-<img width="2560" height="2692" alt="localhost_3000_(Nest Hub Max)" src="https://github.com/user-attachments/assets/16d2321c-5478-4a92-830b-f31e2bd3c0ac" />
+```
 
 
 
+A API estará rodando localmente (geralmente na porta `3000`).
+
+Funcionalidades
+
+* Listagem de posts.
+* Criação de novas postagens.
+* Armazenamento local utilizando SQLite.
+
+```
 
 
 

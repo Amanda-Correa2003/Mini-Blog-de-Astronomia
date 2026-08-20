@@ -9,17 +9,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-// Conectar ao Banco de Dados SQLite (apagando o antigo para recriar com o novo tema)
 const db = new sqlite3.Database('./database.sqlite', (err) => {
   if (err) {
     console.error('Erro ao conectar ao banco de dados:', err.message);
   } else {
-    console.log('🌌 Conectado ao banco de dados SQLite (Astronomia).');
+    console.log('Conectado ao banco de dados SQLite.');
     initDb();
   }
 });
 
-// Criar tabelas e popular dados espaciais
 function initDb() {
   db.serialize(() => {
     db.run(`CREATE TABLE IF NOT EXISTS posts (
@@ -36,7 +34,6 @@ function initDb() {
       FOREIGN KEY(postId) REFERENCES posts(id)
     )`);
 
-    // Limpar dados antigos para atualizar o tema (opcional, mas garante que os posts novos entrem)
     db.run(`DELETE FROM posts`);
     db.run(`DELETE FROM comments`);
 
@@ -53,18 +50,21 @@ function initDb() {
     postsEspaciais.forEach(p => stmt.run(p[0], p[1]));
     stmt.finalize();
 
-    // Comentários espaciais
+db.run(`DELETE FROM posts`);
+    db.run(`DELETE FROM comments`);
+    db.run(`DELETE FROM sqlite_sequence WHERE name='posts'`);
+    db.run(`DELETE FROM sqlite_sequence WHERE name='comments'`);
+
     db.run(`INSERT INTO comments (postId, email, body) VALUES 
-      (1, 'astro.lucas@email.com', 'Incrível pensar que a física para ali'),
+      (1, 'yunasilva@email.com', 'UAUUUU'),
       (1, 'devalaya.p@email.com', 'Tudo mentira'),
       (2, 'carlinhosuzumaki@email.com', 'Sempre tive essa curiosidade sobre como eles dormem flutuando kkkk'),
-      (3, 'helena.troia@email.com', 'Incrível!')`);
+      (3, 'helena.troia@email.com', 'MT BOM!')`);
     
-    console.log('🚀 Dados de astronomia semeados com sucesso!');
+    console.log('Dados semeados com sucesso.');
   });
 }
 
-// Rotas da API
 app.get('/api/posts', (req, res) => {
   db.all("SELECT * FROM posts", [], (err, rows) => {
     if (err) {
@@ -86,9 +86,6 @@ app.get('/api/posts/:id/comments', (req, res) => {
   });
 });
 
-// Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor estelar rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
-
-    

@@ -4,14 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AstroBlog - Explorando o Universo</title>
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome para Ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-[#030014] text-slate-100 min-h-screen font-sans antialiased selection:bg-purple-500 selection:text-white">
 
-  <!-- Header -->
   <header class="bg-[#0b0726]/60 backdrop-blur-md border-b border-purple-500/20 sticky top-0 z-50 shadow-[0_4px_30px_rgba(147,51,234,0.1)]">
     <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
       <div class="flex items-center space-x-3">
@@ -23,12 +20,11 @@
         </h1>
       </div>
       <span class="text-xs font-medium px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
-        <i class="fa-solid fa-satellite text-[10px] mr-1"></i> Full-Stack Space Edition
+        <i class="fa-solid fa-satellite text-[10px] mr-1"></i> Edição espacial
       </span>
     </div>
   </header>
 
-  <!-- Main Content -->
   <main class="max-w-6xl mx-auto px-4 py-12">
     <div class="text-center mb-14">
       <div class="inline-block mb-3 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs tracking-wider uppercase font-semibold">
@@ -42,18 +38,13 @@
       </p>
     </div>
 
-    <!-- Posts Grid -->
-    <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- Os posts serão injetados aqui via JavaScript -->
-    </div>
+    <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </main>
 
-  <!-- Footer -->
   <footer class="text-center py-8 text-xs text-purple-400/50 border-t border-purple-950/50 mt-20">
     <p>Transmitindo do espaço sideral para a sua tela 🚀</p>
   </footer>
 
-  <!-- Script Front-end -->
   <script>
     const API_URL = 'http://localhost:3000/api';
     const postsContainer = document.getElementById("posts-container");
@@ -106,7 +97,6 @@
     async function loadComments(postId, buttonEl) {
       const commentWrapper = buttonEl.nextElementSibling;
       
-      // Alternar visualização se já estiver aberto
       if (!commentWrapper.classList.contains("hidden")) {
         commentWrapper.classList.add("hidden");
         buttonEl.innerHTML = `<i class="fa-regular fa-comment"></i><span>Ver transmissões (comentários)</span>`;
@@ -140,7 +130,6 @@
       }
     }
 
-    // Inicializar aplicação
     fetchPosts();
   </script>
 </body>
