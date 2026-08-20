@@ -40,9 +40,15 @@ Funcionalidades
 * Criação de novas postagens.
 * Armazenamento local utilizando SQLite.
 
+
+Imagens (desktop e mobile)
+
+<img width="2560" height="2354" alt="127 0 0 1_5500_public_index html(Nest Hub Max)" src="https://github.com/user-attachments/assets/f5d2ced4-384a-46f2-9a76-63f4f9a340fb" />
+
+<img width="750" height="5098" alt="127 0 0 1_5500_public_index html(iPhone SE)" src="https://github.com/user-attachments/assets/6a581fb1-ba52-42a0-9329-d04aa09e615b" />
+
+
 ```
-
-
 
 
 
